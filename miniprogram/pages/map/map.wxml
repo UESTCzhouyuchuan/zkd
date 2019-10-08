@@ -1,0 +1,8 @@
+<!--miniprogram/pages/map/map.wxml-->
+<view class='noticeBar'>
+  <text class='icon-notificationfill noticeBar-icon'></text>
+  <view class='noticeBar-wrap'>
+    <view class='noticeBar-content' animation="{{noticeAnimation}}">{{notices[noticeIndex]}}</view>
+  </view>
+</view>
+<map scale="4" include-points='{{include_points}}' layer-style='2' latitude="{{myLocation.latitude}}" longitude="{{myLocation.longitude}}" markers="{{marks}}" setting="{{setting}}"></map>

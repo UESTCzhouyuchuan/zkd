@@ -1,0 +1,45 @@
+/* miniprogram/pages/rank/rank.wxss */
+.cu-progress view{
+  color:rgb(245, 4, 4);
+  font-size: 25rpx;
+}
+.cu-progress{
+  color:rgb(207, 24, 24);
+  font-size: 25rpx;
+}
+page{
+  background: url('https://yulovexin.xyz/images/tmp/bg.png');
+  background-attachment: fixed;
+  background-size: cover;
+}
+.header{
+  margin-top: 20rpx;
+  text-align: center;
+  color: #930302;
+  font-size: 40rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-weight: 500;
+}
+.rank-wrap{
+  padding: 10rpx;
+  width: 100%;
+}
+.rank-box{
+  min-height: 70rpx;
+  display: flex;
+  align-items: center;
+  background: rgba(120, 120, 120, 0.1);
+  margin: 15rpx 0;
+  padding: 0 10rpx;
+  border-radius: 10rpx;
+}
+.rank-text{
+  text-align: center;
+  width:200rpx;
+  min-height: 100%;
+  height: auto;
+}
+.rank-progress{
+  flex:1;
+}

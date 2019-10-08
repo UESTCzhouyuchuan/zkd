@@ -1,0 +1,116 @@
+/* miniprogram/pages/my/my.wxss */
+.container{
+  justify-content: center;
+}
+page{
+  background: url('https://yulovexin.xyz/images/tmp/bg.png');
+  background-attachment: fixed;
+  background-size: cover;
+}
+.avator-box{
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.avator{
+  width:100%;
+  height: 100%;
+}
+.form{
+  margin-top: 30rpx; 
+  width: 750rpx;
+}
+.margin-top{
+  margin-top: 30rpx; 
+}
+.form-item{
+  background-color: rgba(255,255,255,0.4);
+  position: relative;
+  padding:1rpx 30rpx;
+  display:flex;
+  align-items:center;
+  min-height:80rpx;
+  justify-content:space-between;
+  box-shadow: 0 1rpx 2rpx rgba(0, 0, 0, 0.1);
+}
+.form-item+.form-item{
+  border-top: 2rpx solid #ccc;
+}
+.form-item .title {
+text-align:justify;
+margin-right:30rpx;
+font-size:30rpx;
+position:relative;
+height:60rpx;
+line-height:60rpx;
+}
+.form-item input{
+  flex:1;
+  font-size: 30rpx;
+  color: #555;
+  padding-right: 20rpx;
+  height:80rpx;
+}
+.form-item textarea {
+margin:32rpx 0 30rpx;
+height:4.8em;
+width:100%;
+line-height:1.2em;
+flex:1;
+font-size:28rpx;
+padding:0;
+box-sizing:content-box;
+display:inline-block;
+vertical-align:top;
+}
+.save {
+  width: 450rpx;
+  background-color: #e8c975;
+  margin: 20rpx auto 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #884c07;
+  font-weight: 600;
+}
+.arrow::before{
+  font-family: "iconfont";
+  display: block;
+  content: "\e6a3";
+  position: absolute;
+  font-size: 34rpx;
+  color: #aaa;
+  line-height: 30rpx;
+  height: 30rpx;
+  width: 30rpx;
+  text-align: center;
+  top: 0rpx;
+  bottom: 0;
+  right: 30rpx;
+  margin: auto;
+}
+.qr{
+  width: 75rpx;
+  height: 75rpx;
+  overflow: hidden;
+  margin-right: 60rpx;
+  border: 2rpx solid #aaa;
+}
+.degree{
+  margin-right: 460rpx;
+  font-size: 30rpx;
+}
+
+.dot{
+  position: relative;
+}
+.dot::before, dot::after{
+  font-size: 30rpx;
+  display: block;
+  content: '*';
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  color: red;
+}

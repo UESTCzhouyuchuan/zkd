@@ -1,0 +1,80 @@
+<!--miniprogram/pages/my/my.wxml-->
+<view class='container' style="background: url('https://yulovexin.xyz/images/tmp/bg.png');">
+  <view class='avator-box' catchtap='viewPersonInfo'>
+    <open-data type="userAvatarUrl" mode='widthFix'></open-data>
+  </view>
+  <view class='form'>
+    <view class='form-item border-top'>
+      <view class='title dot'>姓名:</view>
+      <input type='text' bindinput='input' placeholder='你的名字' value='{{user_info.name}}' data-key='name'></input>
+    </view>
+    <view class='form-item'>
+      <view class='title dot'>入学/入职年份:</view>
+      <input type='number' bindinput='input' data-key='enter_year' placeholder='例：1949' value='{{user_info.enter_year}}'></input>
+    </view>
+    <view class='form-item arrow kaozuo' hover-class='hover' catchtap='showModal'>
+      <view class='title dot'>培养院所:</view>
+      <view class='institution'>{{user_info.institution || "点击输入院所"}}</view>
+    </view>
+    <view class='form-item arrow kaozuo' hover-class='hover' catchtap='chooseDegree'>
+      <view class='title dot'>身份:</view>
+      <view class='degree'>{{user_info.degree || "点击选择身份"}}</view>
+    </view>
+    <view class='form-item'>
+      <view class='title dot'>工作单位:</view>
+      <input  type='text' bindinput='input' data-key='work_unit' placeholder='例：中科院' value='{{user_info.work_unit}}'></input>
+    </view>
+    <view class='form-item'>
+      <view class='title dot'>家庭地址:</view>
+      <input type='text' bindinput='input' data-key='adress' placeholder='你的登记地址' value='{{user_info.adress}}'></input>
+    </view>
+    <view class='form-item '>
+      <view class='title'>联系电话:</view>
+      <input type='number' bindinput='input' data-key='phone' placeholder='你的个人电话' value='{{user_info.phone}}'></input>
+    </view>
+    <view class='form-item'>
+      <view class='title'>邮箱:</view>
+      <input type='text' bindinput='input' data-key='mail' placeholder='name@example.com' value='{{user_info.mail}}'></input>
+    </view>
+    <view class="form-item">
+      <view class="title">个人信息公开</view>
+      <switch class="red sm" checked="{{user_info.show_info}}" bindchange='input' data-key='show_info'></switch>
+    </view>
+    <view class="form-item">
+      <view class="title">定位公开</view>
+      <switch class="blue sm" checked="{{user_info.show_location}}" bindchange='input' data-key='show_location'></switch>
+    </view>
+    <view class='form-item margin-top border-top arrow' hover-class='hover' catchtap='input_qr'>
+      <view class='title dot'>微信二维码</view>
+      <image class='qr' src='{{qr}}'></image>
+    </view>
+    <view style="margin-left:30rpx;font-size:24rpx;color:#444" class="margin-top-xs"><text style="color:red">*</text>号代表必填</view>
+    <view class='form-item border-top margin-top-xs'>
+      <view class='title'>对校友说的话</view>
+    </view>
+    <view class='form-item'>
+      <textarea placeholder='想对大家说的话' bindinput='input' data-key='mesg' value='{{user_info.mesg}}'></textarea>
+    </view>
+    <button class='save shadow' hover-class='hover' catchtap='save'>保存</button>
+  </view>
+</view>
+<view class="cu-modal {{showModal?'show':''}}">
+  <view class='cu-dialog' style='min-height:{{showNotice && notices.length?550:0}}rpx;vertical-align: top;margin-top:100rpx;transition-duration: 0.3s;'>
+    <view class="cu-bar justify-end" style='background:#F8F8F8'>
+      <view class="content">输入院所名字</view>
+      <view class="action" bindtap="hideModal">
+        <text class="icon-close text-red"></text>
+      </view>
+    </view>
+    <view class='input-box'>
+      <input class='input-ins' bindfocus='focus' bindinput='input_' value='{{institution}}' placeholder='请输入'></input>
+      <view class='notice-list' wx:if='{{showNotice}}'>
+        <view class='notice-item' catchtap='click_notice' data-value="{{item}}"wx:for="{{notices}}" wx:key>{{item}}</view>
+      </view>
+    </view>
+    <view class="cu-bar justify-around">
+      <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+      <button class="cu-btn bg-green margin-left" disabled="{{!canConfirm}}"bindtap="confirm">确定</button>
+    </view>
+  </view>
+</view>

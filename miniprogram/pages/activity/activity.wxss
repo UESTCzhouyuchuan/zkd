@@ -1,0 +1,75 @@
+/* miniprogram/pages/activity/activity.wxss */
+/* page {
+  background:url('https://yulovexin.xyz/images/tmp/bg.png') repeat-y;
+  background-size: 100% 100%;
+  height: auto;
+}
+cu-bar,.cu-form-group{
+  background-color: rgba(255, 255, 255, 0.5)
+} */
+.cu-form-group{
+  background-color:transparent;
+}
+.cu-form-group .textarea-box{
+  width: 600rpx;
+  height: 400rpx;
+  margin: auto;
+  border: #D5867D solid 4rpx;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+.cu-form-group .textarea-box textarea{
+  color: #884B06;
+  margin: 20rpx;
+  height: 360rpx;
+  width: 560rpx;
+  line-height: 1.2em;
+  flex: 1;
+  font-size: 32rpx;
+  padding: 0;
+  box-sizing: content-box;
+  display: inline-block;
+  vertical-align: top;
+}
+.congratulation,.container{
+  width: 100%;
+}
+.congratulation{
+  background: rgba(255,255,255,0.1);
+  background-image:url('https://yulovexin.xyz/images/zkd/birth4.png');
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form{
+  width: 100%;
+}
+.header{
+  margin-top: 60rpx;
+  text-align: center;
+  color: #930302;
+  font-size: 40rpx;
+  font-weight: 500;
+}
+.save{
+  width: 450rpx;
+  background-color: #e8c975;
+  margin: 20rpx auto 40rpx;
+  height: 80rpx;
+  font-size: 35rpx;
+  line-height: 80rpx;
+  color: #884c07;
+  font-weight: 600;
+}
+.tip view{
+  margin: 5rpx 0;
+}
+.list-wrap{
+  background: #eee;
+  width: 100%;
+  display: flex;
+  padding:20rpx;
+  flex-direction: column;
+}

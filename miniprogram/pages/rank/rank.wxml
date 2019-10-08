@@ -1,0 +1,25 @@
+<!--miniprogram/pages/rank/rank.wxml-->
+<view class='container'>
+  <view class='header'>——— 贺卡排行榜 ———</view>
+  <scroll-view scroll-x class="bg-green light nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==rankTabCur?'text-red cur':''}}" wx:for="{{rankTabNav}}" wx:key bindtap='rankTabSelect' data-index="{{index}}">
+        <text class="icon-selectionfill"></text> {{item}}
+      </view>
+    </view>
+  </scroll-view>
+  <view class='rank-wrap' wx:if="{{showRank}}">
+    <view wx:for="{{rank[rankTabCur]}}" class='rank-box' wx:key="{{index}}">
+      <view class='rank-text'>{{item.name}}</view>
+      <view class="cu-progress round striped active rank-progress">
+        <view class="bg-green" style="width:{{item.value/rank[rankTabCur][0].value*100}}%;">{{item.value/rank[rankTabCur][0].value>=0.5?item.value+'张':''}}</view>
+        {{item.value/rank[rankTabCur][0].value<0.5?item.value+'张':''}}
+      </view>
+    </view>
+  </view>
+  <view class="flex margin-left margin-right margin-top" wx:else>
+    <view class="bg-white flex-sub radius shadow-lg">
+      <image src="/images/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:250rpx;width:700rpx;"></image>
+    </view>
+  </view>
+</view>

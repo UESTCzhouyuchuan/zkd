@@ -1,0 +1,70 @@
+<view class='container'>
+  <view class='congratulation'>
+    <view class='header'>
+      <text>—— 献上祝福 ——</text>
+    </view>
+    <form>
+      <view class="cu-form-group margin-top">
+        <view class='textarea-box'>
+          <textarea data-placeholder="写下你祝福的话" maxlength="-1" disabled="{{modalName!=null}}" placeholder-class="placeholder" class="{{textareaAValue?'value':''}}" bindinput="textareaAInput" value="{{textareaAValue}}"></textarea>
+        </view>
+      </view>
+      <view class="cu-bar">
+        <view class="action">
+          图片上传
+        </view>
+        <view class="action">
+          {{imgs.length}}/9
+        </view>
+      </view>
+      <view class="cu-form-group">
+        <view class="grid col-4 grid-square flex-sub">
+          <view class="padding-xs bg-img" style="background-image:url({{imgs[index]}})" wx:for="{{imgs}}" wx:key="{{index}}" bindtap="ViewImage" data-current="{{imgs[index]}}" data-urls='{{imgs}}'>
+            <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+              <text class="icon-close"></text>
+            </view>
+          </view>
+          <view class="padding-xs solids" bindtap="chooseImg" wx:if="{{imgs.length<9}}">
+            <text class="icon-cameraadd"></text>
+          </view>
+        </view>
+      </view>
+    </form>
+    <button class='save cu-btn bg-orange shadow' catchtap='save'>
+      <text class="{{isSubmiting?'icon-loading2':''}} iconfont-spin"></text>提交</button>
+  </view>
+  <view class='list-wrap'>
+    <view class='cu-bar'>
+      <view style='color:#555;'>精选祝福</view>
+    </view>
+    <view wx:for="{{congratulations}}" wx:key='' wx:for-item="congItem">
+      <view class="cu-card dynamic no-card shadow" style="border: 1rpx solid #eee;">
+        <view class="cu-item shadow" >
+          <view class="cu-list menu-avatar">
+            <view class="cu-item">
+              <view class="cu-avatar round lg" catchtap="viewPersonInfo" data-openid="{{congItem.openid}}"style="background-image:url({{congItem.avatarUrl}});"></view>
+              <view class="content flex-sub">
+                <view>{{congItem.nickName}}</view>
+                <view class="text-gray text-sm flex justify-between">
+                  院所：{{congItem.institution ?congItem.institution:"未填写"}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="text-content">
+            {{congItem.text_content}}
+          </view>
+          <view class="grid flex-sub padding-lr col-3 grid-square">
+            <view bindtap="ViewImage" data-current="{{itemImg}}" data-urls='{{congItem.imgsUrl}}' class="bg-img" style="background-image:url({{itemImg}});" wx:for="{{congItem.imgsUrl}}"wx:key="{{index}}" wx:for-item="itemImg">
+            </view>
+          </view>
+          <!-- <view class="text-gray text-sm text-right padding">
+            <text class="icon-attentionfill margin-lr-xs"></text> 10
+            <text class="icon-appreciatefill margin-lr-xs"></text> 20
+            <text class="icon-messagefill margin-lr-xs"></text> 30
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+<!--miniprogram/pages/my/my.wxml-->
+<view class='container'>
+  <view class='avator-box'>
+    <image class='avator' src='{{user_info.wxUserInfo.avatarUrl}}'></image>
+  </view>
+  <view class='form'>
+    <view class='form-item'>
+      <view class='title'>姓名:</view>
+      <input type='text' placeholder='未填写' disabled value='{{user_info.name}}'></input>
+    </view>
+    <view class='form-item'>
+      <view class='title'>入学年份:</view>
+      <input disabled placeholder='未填写' value='{{user_info.enter_year}}'></input>
+    </view>
+    <view class='form-item'>
+      <view class='title'>培养院所:</view>
+      <input disabled placeholder='未填写' value='{{user_info.institution}}'></input>
+    </view>
+    <view class='form-item'>
+      <view class='title'>培养程度:</view>
+      <view class='degree'>{{user_info.degree=='' ? '未填写':user_info.degree}}</view>
+    </view>
+    <view class='form-item'>
+      <view class='title'>工作单位:</view>
+      <input disabled placeholder='未填写' value="{{user_info.show_info?user_info.work_unit:'用户选择不公示'}}"></input>
+    </view>
+    <view class='form-item'>
+      <view class='title'>家庭地址:</view>
+      <input placeholder='未填写' disabled value="{{user_info.show_info?user_info.adress:'用户选择不公示'}}"></input>
+    </view>
+    <view class='form-item'>
+      <view class='title'>联系电话:</view>
+      <input disabled placeholder='未填写' value="{{user_info.show_info?user_info.phone:'用户选择不公示'}}"></input>
+    </view>
+    <view class='form-item'>
+      <view class='title'>邮箱:</view>
+      <input disabled placeholder='未填写' value="{{user_info.show_info ? user_info.mail:'用户选择不公示'}}"></input>
+    </view>
+    <view class='form-item'>
+      <view class='title'>微信二维码</view>
+      <image class='qr' src='{{qr}}' catchtap="ViewImage" data-url="{{qr}}"></image>
+    </view>
+    <view class='form-item'>
+      <view class='title'>对校友说的话</view>
+    </view>
+    <view class='form-item'>
+      <textarea placeholder='未填写' disabled value='{{user_info.mesg}}'></textarea>
+    </view>
+    <button wx:if="{{isMe}}" class='save' hover-class='hover' catchtap='changeMe'>修改我的信息</button>
+    <view wx:else>
+      <button class='save' hover-class='hover' catchtap='contact'>联系校友会</button>
+    </view>
+  </view>
+  <view class="cu-modal {{showContact?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap='nop'>
+      <view class="bg-img" style="background-image: url('https://yulovexin.xyz/images/zkd/contact.png');height:150px;">
+      </view>
+      <view class="cu-bar bg-blue">
+        <view class="action margin-0 flex-sub  solid-left">点击查看图片</view>
+      </view>
+    </view>
+  </view>
+</view>

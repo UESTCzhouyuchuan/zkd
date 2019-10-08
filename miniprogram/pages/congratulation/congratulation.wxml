@@ -1,0 +1,16 @@
+<!--miniprogram/pages/congratulation/congratulation.wxml-->
+<view class='birth-wrap' wx:if='{{showPic}}' style="background-image:url('https://yulovexin.xyz/images/zkd/birth4.png');">
+    <view class='header'>我的证书</view>
+    <view class='birth-box'>
+      <canvas canvas-id="birth" class='birth' catchtap='toCertificate'></canvas>
+    </view>
+    <view class='tip'>点击证书后查看，然后，长按保存分享</view>
+  </view>
+<view class='container' wx:else>
+  <image src='/images/congratulation.png' class='bg' catchtap='showPic'>
+    <view class='text'>
+      <view>亲爱的{{nickName}}:</view>
+      <view class='indent'>恭喜您是第{{number}}位点亮全球地图的校友，您已获得中科院70周年校庆的祝福证书</view>
+    </view>
+  </image>
+</view>

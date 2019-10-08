@@ -1,0 +1,30 @@
+/* miniprogram/pages/map/map.wxss */
+map{
+  width: 100%;
+  height:100vh;
+}
+.noticeBar{
+  display: flex;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  color: #f76a24;
+  background-color: #fefcec;
+  overflow: hidden
+}
+.noticeBar-icon{
+  display: flex;
+  margin-left: 30rpx;
+}
+.noticeBar-wrap{
+  position: relative;
+  flex: 1; /*占据右侧屏幕*/
+  margin: 0 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.noticeBar-wrap .noticeBar-content{
+  position: absolute;
+  transition-duration: 20s;
+}

@@ -1,0 +1,55 @@
+/* miniprogram/pages/congratulation/congratulation.wxss */
+.container{
+  height: 100vh;
+  background: #aaa;
+}
+.bg{
+  margin: 200rpx auto;
+  height: 742rpx;
+  width: 650rpx;
+  position: relative;
+}
+.text{
+  color: red;
+  position: absolute;
+  top: 220rpx;
+  left: 150rpx;
+  width: 400rpx;
+  font-size: 32rpx;
+  font-weight: 400;
+}
+.indent{
+  text-indent:2rem;
+}
+.birth-wrap{
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header{
+  margin: 50rpx;
+  text-align: center;
+  color:rgb(212, 212, 14);
+  font-size: 40rpx;
+  font-weight: 500;
+}
+.birth-box{
+  width: 640rpx;
+  height: 940rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  background: #F6D4CB;
+}
+.birth{
+  width: 600rpx;
+  height: 900rpx;
+  border-radius: 20rpx;
+}
+.tip{
+  text-align: center;
+  color: #444;
+}

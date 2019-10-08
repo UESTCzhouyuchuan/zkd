@@ -1,0 +1,34 @@
+/* miniprogram/pages/login/login.wxss */
+.container{
+  height: 100vh;
+  justify-content: flex-end;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.bg{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+.qr{
+  position: fixed;
+  right: 15rpx;
+  bottom: 40rpx;
+  width: 130rpx;
+  height: 130rpx;
+  background: url('https://yulovexin.xyz/images/zkd/qrLogin.jpg');
+  background-size: cover;
+}
+.bottom{
+  margin-bottom: 50rpx;
+}
+button{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 50rpx;
+  font-weight: 500;
+  box-shadow: -3rpx 3rpx 2rpx #eee;
+  background-color: #DBBA68;
+  color: #884B06;
+  width: 400rpx;
+}
