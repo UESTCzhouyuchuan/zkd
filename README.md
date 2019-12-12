@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# zkd
-zkd校友会
-=======
 # zkd校友会
 # 云开发 quickstart
 
