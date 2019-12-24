@@ -20,3 +20,10 @@
 
 - 使用有效时间缓存机制，缓存基本不会变化的图片
 - 使用 async/await 控制异步请求流程
+# 页面展示
+- 主页![https://github.com/UESTCzhouyuchuan/zkd/tree/master/img-demo/home.jpg](./img-demo/home.jpg)
+- 活动页面![https://github.com/UESTCzhouyuchuan/zkd/tree/master/img-demo/activity.jpg](./img-demo/activity.jpg)
+- 展示列表![https://github.com/UESTCzhouyuchuan/zkd/tree/master/img-demo/list.jpg](./img-demo/list.jpg)
+- 地图![https://github.com/UESTCzhouyuchuan/zkd/tree/master/img-demo/map.jpg](./img-demo/map.jpg)
+- 排行![https://github.com/UESTCzhouyuchuan/zkd/tree/master/img-demo/rank.jpg](./img-demo/rank.jpg)
+- 个人信息页面![https://github.com/UESTCzhouyuchuan/zkd/tree/master/img-demo/info.jpg](./img-demo/info.jpg)
