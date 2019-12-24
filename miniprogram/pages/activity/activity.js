@@ -48,7 +48,6 @@ Page({
         isSubmiting: false,
         congratulations: congratulations
       })
-      console.log("before")
       new Promise((resolve,reject)=>{
         db.collection('publish_info').count().then(res=>{
           console.log("第多少位",res)

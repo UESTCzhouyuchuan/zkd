@@ -3,7 +3,7 @@
   justify-content: center;
 }
 page{
-  background: url('https://yulovexin.xyz/images/tmp/bg.png');
+  background: url('https://www.yulovexin.xyz/images/tmp/bg.png');
   background-attachment: fixed;
   background-size: cover;
 }

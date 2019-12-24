@@ -28,7 +28,7 @@ Page({
   },
   nop(){
     wx.previewImage({
-      urls: ['https://yulovexin.xyz/images/zkd/contact.png'],
+      urls: ['https://www.yulovexin.xyz/images/zkd/contact.png'],
     })
   },
   ViewImage(e) {

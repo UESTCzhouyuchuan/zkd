@@ -1,6 +1,6 @@
 /* miniprogram/pages/activity/activity.wxss */
 /* page {
-  background:url('https://yulovexin.xyz/images/tmp/bg.png') repeat-y;
+  background:url('https://47.100.219.208/images/tmp/bg.png') repeat-y;
   background-size: 100% 100%;
   height: auto;
 }
@@ -36,7 +36,7 @@ cu-bar,.cu-form-group{
 }
 .congratulation{
   background: rgba(255,255,255,0.1);
-  background-image:url('https://yulovexin.xyz/images/zkd/birth4.png');
+  background-image:url('https://www.yulovexin.xyz/images/zkd/bgActivity.png');
   background-size: cover;
   width: 100%;
   display: flex;
@@ -72,4 +72,10 @@ form{
   display: flex;
   padding:20rpx;
   flex-direction: column;
+}
+.congratulations{
+  border: 1px solid #eee;
+  border-radius: 30rpx;
+  box-shadow: 0 0rpx 8rpx #fff;
+  margin-bottom: 10rpx;
 }

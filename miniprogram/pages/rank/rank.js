@@ -6,9 +6,10 @@ Page({
    */
   data: {
     rankTabCur: 0,
-    rankTabNav: ['研究所', '省份'],
+    rankTabNav: ['研究所', '省份', '国家'],
     rank: [],
-    showRank: false
+    showRank: false,
+    onLoadFirst:false
   },
   rankTabSelect(e) {
     const cur = e.currentTarget.dataset.index
@@ -48,9 +49,9 @@ Page({
       }
       // console.log(res)
       let t3
-      for (let t1 = 0 ; t1<res.length;t1++){
-        for (let t2 = 0 ; t2 < t1;t2++){
-          if (res[t1].value > res[t2].value){
+      for (let t1 = 0; t1 < res.length; t1++) {
+        for (let t2 = 0; t2 < t1; t2++) {
+          if (res[t1].value > res[t2].value) {
             t3 = res[t1]
             res[t1] = res[t2]
             res[t2] = t3
@@ -61,8 +62,6 @@ Page({
     }
     const t = this
     const db = wx.cloud.database()
-    let institution = []
-    let province = []
     async function get() {
       let data = []
       let i = 0
@@ -82,17 +81,20 @@ Page({
           })
         })
       }
-      let provinces = []
-      let getInfo = []
+      let provinces = [];
+      let institutions = [];
+      let nations = [];
+      let getInfo = [];
       for (let i in data) {
-         getInfo[i] = new Promise((resolve, reject) => {
+        getInfo[i] = new Promise((resolve, reject) => {
           db.collection('user_info').doc(data[i]).get().then(res => {
             // console.log(res)
             if (res.data.institution) {
-              institution.push(res.data.institution)
+              institutions.push(res.data.institution)
             }
             if (res.data.location.adress) {
               provinces.push(res.data.location.adress.ad_info.province)
+              nations.push(res.data.location.adress.ad_info.nation)
             }
             resolve()
           }).catch(err => {
@@ -100,15 +102,18 @@ Page({
           })
         })
       }
-      Promise.all(getInfo).then(res=>{
-        institution = getWordCnt(institution)
-        provinces = getWordCnt(provinces)
-        console.log("得到rank数据")
-        console.log(provinces, institution)
+      Promise.all(getInfo).then(res => {
+        institutions = getWordCnt(institutions);
+        provinces = getWordCnt(provinces);
+        nations = getWordCnt(nations);
+        console.log("得到rank数据");
+        console.log(provinces, institutions, nations);
         t.setData({
-          'rank[0]': institution,
+          'rank[0]': institutions,
           'rank[1]': provinces,
-          showRank: true
+          'rank[2]': nations,
+          showRank: true,
+          onLoadFirst: true
         })
       })
     }
@@ -121,6 +126,7 @@ Page({
    */
   onLoad: function(options) {
     getApp().backToLogin(getApp().globalData.openid)
+    this.getTotalInfo()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -133,7 +139,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.getTotalInfo()
+    this.data.onLoadFirst || this.getTotalInfo()
   },
 
   /**

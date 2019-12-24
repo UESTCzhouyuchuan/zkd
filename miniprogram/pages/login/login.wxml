@@ -1,5 +1,5 @@
 <!--miniprogram/pages/login/login.wxml-->
-<view class='container' style="background-image: url('https://yulovexin.xyz/images/zkd/bgLogin.jpg');">
+<view class='container' style="background-image: url('https://www.yulovexin.xyz/images/zkd/bgLogin.jpg');">
   <view class='bottom'>
     <button wx:if="{{canIUse}}"class='login_button' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" catchtap="{{prepare?'loading':''}}">
       <text class="{{isSubmiting?'icon-loading2':''}} iconfont-spin"></text>

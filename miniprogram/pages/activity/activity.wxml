@@ -18,7 +18,7 @@
         </view>
       </view>
       <view class="cu-form-group">
-        <view class="grid col-4 grid-square flex-sub">
+        <view class="grid col-4 grid-square flex-sub" style="border:1px solid #aaa;border-radius:10rpx;padding:5rpx;">
           <view class="padding-xs bg-img" style="background-image:url({{imgs[index]}})" wx:for="{{imgs}}" wx:key="{{index}}" bindtap="ViewImage" data-current="{{imgs[index]}}" data-urls='{{imgs}}'>
             <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
               <text class="icon-close"></text>
@@ -38,9 +38,9 @@
       <view style='color:#555;'>精选祝福</view>
     </view>
     <view wx:for="{{congratulations}}" wx:key='' wx:for-item="congItem">
-      <view class="cu-card dynamic no-card shadow" style="border: 1rpx solid #eee;">
-        <view class="cu-item shadow" >
-          <view class="cu-list menu-avatar">
+      <view class="cu-card dynamic no-card shadow congratulations">
+        <view class="cu-item shadow" style="padding-bottom: 10rpx;">
+          <view class="cu-list menu-avatar" style="border-bottom:2rpx solid #eee;">
             <view class="cu-item">
               <view class="cu-avatar round lg" catchtap="viewPersonInfo" data-openid="{{congItem.openid}}"style="background-image:url({{congItem.avatarUrl}});"></view>
               <view class="content flex-sub">
@@ -51,7 +51,7 @@
               </view>
             </view>
           </view>
-          <view class="text-content">
+          <view class="text-content" style="padding-top: 10rpx;">
             {{congItem.text_content}}
           </view>
           <view class="grid flex-sub padding-lr col-3 grid-square">

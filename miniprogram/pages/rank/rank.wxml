@@ -17,7 +17,7 @@
       </view>
     </view>
   </view>
-  <view class="flex margin-left margin-right margin-top" wx:else>
+  <view class="flex margin-top" wx:else>
     <view class="bg-white flex-sub radius shadow-lg">
       <image src="/images/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:250rpx;width:700rpx;"></image>
     </view>

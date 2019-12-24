@@ -8,7 +8,7 @@
   font-size: 25rpx;
 }
 page{
-  background: url('https://yulovexin.xyz/images/tmp/bg.png');
+  background: url('https://www.yulovexin.xyz/images/tmp/bg.png');
   background-attachment: fixed;
   background-size: cover;
 }
@@ -24,6 +24,7 @@ page{
 .rank-wrap{
   padding: 10rpx;
   width: 100%;
+  transition: height linear 0.3s;
 }
 .rank-box{
   min-height: 70rpx;

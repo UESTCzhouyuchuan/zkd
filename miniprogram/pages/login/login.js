@@ -137,6 +137,7 @@ Page({
     } else if (wxUserInfo) {
       console.log("获取wxUserInfo", wxUserInfo)
       const user_info = getApp().globalData.user_info
+      getApp().getTempImageUrl('avatarImageUrl', wxUserInfo.avatarUrl);
       console.log('user_info', getApp().globalData.user_info)
       if (!user_info.wxUserInfo || !this.isObjectValueEqual(user_info.wxUserInfo, wxUserInfo)) {
         console.log('wxuserinfo存在修改')
@@ -190,7 +191,8 @@ Page({
           fail: err => {
             console.log("Error mesg: ", err)
             wx.showToast({
-              title: '获取信息失败请检查网络',
+              title: '获取信息失败,请检查网络',
+              icon:'none'
             })
             reject()
           }
@@ -211,7 +213,7 @@ Page({
    */
   // getTempImageUrl() {
   //   wx.getImageInfo({
-  //     src: 'https://yulovexin.xyz/images/zkd/birth.png',
+  //     src: 'https://47.100.219.208/images/zkd/birth.png',
   //     success: res => {
   //       console.log("获得临时图片成功")
   //       getApp().globalData.birthUrl = res.path

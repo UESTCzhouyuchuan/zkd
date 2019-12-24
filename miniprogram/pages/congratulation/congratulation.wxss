@@ -33,7 +33,7 @@
 .header{
   margin: 50rpx;
   text-align: center;
-  color:rgb(212, 212, 14);
+  color:green;
   font-size: 40rpx;
   font-weight: 500;
 }

@@ -1,5 +1,5 @@
 <!--miniprogram/pages/congratulation/congratulation.wxml-->
-<view class='birth-wrap' wx:if='{{showPic}}' style="background-image:url('https://yulovexin.xyz/images/zkd/birth4.png');">
+<view class='birth-wrap' wx:if='{{showPic}}' style="background-image:url('https://www.yulovexin.xyz/images/zkd/bgActivity.png');">
     <view class='header'>我的证书</view>
     <view class='birth-box'>
       <canvas canvas-id="birth" class='birth' catchtap='toCertificate'></canvas>

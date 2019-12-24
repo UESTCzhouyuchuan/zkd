@@ -1,5 +1,5 @@
 <!--miniprogram/pages/my/my.wxml-->
-<view class='container' style="background: url('https://yulovexin.xyz/images/tmp/bg.png');">
+<view class='container' style="background: url('https://www.yulovexin.xyz/images/tmp/bg.png');">
   <view class='avator-box' catchtap='viewPersonInfo'>
     <open-data type="userAvatarUrl" mode='widthFix'></open-data>
   </view>

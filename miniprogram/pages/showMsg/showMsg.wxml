@@ -53,7 +53,7 @@
   </view>
   <view class="cu-modal {{showContact?'show':''}}" bindtap="hideModal">
     <view class="cu-dialog" catchtap='nop'>
-      <view class="bg-img" style="background-image: url('https://yulovexin.xyz/images/zkd/contact.png');height:150px;">
+      <view class="bg-img" style="background-image: url('https://www.yulovexin.xyz/images/zkd/contact.png');height:150px;">
       </view>
       <view class="cu-bar bg-blue">
         <view class="action margin-0 flex-sub  solid-left">点击查看图片</view>

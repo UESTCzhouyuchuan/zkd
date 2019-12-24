@@ -16,7 +16,7 @@
   bottom: 40rpx;
   width: 130rpx;
   height: 130rpx;
-  background: url('https://yulovexin.xyz/images/zkd/qrLogin.jpg');
+  background: url('https://www.yulovexin.xyz/images/zkd/qrLogin.jpg');
   background-size: cover;
 }
 .bottom{

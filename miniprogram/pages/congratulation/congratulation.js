@@ -35,14 +35,15 @@ Page({
         title: '正在渲染',
         mask: false
       })
-      new Promise((resolve, reject) => {
-        const birthUrl = getApp().globalData.birthUrl
-        if (birthUrl) {
-          console.log("已经缓存")
-          resolve(birthUrl)
+      let pic = []
+      pic[0] = new Promise((resolve, reject) => {
+        const bitrhImageUrl = getApp().globalData.bitrhImageUrl
+        if (bitrhImageUrl) {
+          console.log("已经缓存bitrhImageUrl")
+          resolve(bitrhImageUrl)
         } else {
           wx.getImageInfo({
-            src: 'https://yulovexin.xyz/images/zkd/birth.png',
+            src: 'https://www.yulovexin.xyz/images/zkd/birth.jpg',
             success(res) {
               resolve(res.path)
             },
@@ -52,14 +53,63 @@ Page({
             }
           })
         }
-      }).then(path => {
-        console.log(path)
+      })
+      pic[1] = new Promise((resolve, reject) => {
+        const avatarImageUrl = getApp().globalData.avatarImageUrl
+        if (avatarImageUrl) {
+          console.log("已经缓存avatarImageUrl")
+          resolve(avatarImageUrl)
+        } else {
+          wx.getImageInfo({
+            src: getApp().globalData.user_info.wxUserInfo.avatarUrl,
+            success(res) {
+              resolve(res.path)
+            },
+            fail(err) {
+              console.log(err)
+              reject(err)
+            }
+          })
+        }
+      })
+      pic[2] = new Promise((resolve, reject) => {
+        const avatarShowUrl = getApp().globalData.avatarShowUrl
+        if (avatarShowUrl) {
+          console.log("已经缓存avatarShowUrl")
+          resolve(avatarShowUrl)
+        } else {
+          wx.getImageInfo({
+            src: '',
+            success(res) {
+              resolve(res.path)
+            },
+            fail(err) {
+              console.log(err)
+              reject(err)
+            }
+          })
+        }
+      })
+      Promise.all(pic).then(res => {
+        console.log(res)
+        //获取设备的信息
+        let mobile = wx.getSystemInfoSync();
+        //获取设计图纸换算比例（用于自适应所有屏幕）
+        let ratio = mobile.windowWidth / 375;
+        const avatar = 25*ratio;
+        const avatarShow = 50*ratio
         const birth = wx.createCanvasContext('birth')
-        birth.drawImage(path, 0, 0, width, height)
+        birth.drawImage(res[0], 0, 0, width, height)
         birth.setFillStyle('#EA7517')
-        birth.setFontSize(16)
-        birth.fillText("第" + t.data.number + "位校友" + t.data.nickName + "赠", width * 1 / 4, height * 4 / 7)
-        birth.stroke()
+        birth.setFontSize(14)
+        birth.fillText(t.data.nickName, 60, height / 2)
+        birth.fillText("No."+t.data.number, 60, height / 2 + 20)
+        birth.drawImage(res[2], width / 2 -avatarShow , 60*ratio-avatarShow, avatarShow * 2, avatarShow *2)
+        birth.save()
+        birth.arc(width / 2 + ratio * 2, 55 * ratio,avatar,0,Math.PI*2);
+        birth.clip()
+        birth.drawImage(res[1], width / 2 + ratio * 2 - avatar, 55*ratio-avatar, avatar * 2, avatar * 2)
+        birth.restore()
         birth.draw(false, t.viewPictrue())
         wx.hideLoading()
       })

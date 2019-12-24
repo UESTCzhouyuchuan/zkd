@@ -122,8 +122,8 @@ Page({
     function fun1(a, b) {
       for (let item of b) {
         let obj = {
-          width: 40,
-          height: 56,
+          width: 35,
+          height: 50,
           zIndex: 3,
           callout: {
             color: '#FF0202', //文本颜色
