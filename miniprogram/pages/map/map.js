@@ -119,7 +119,7 @@ Page({
     const t = this
     let pic
 
-    function fun1(a, b) {
+    function itemMapDetail(a, b) {
       for (let item of b) {
         let obj = {
           width: 35,
@@ -146,7 +146,7 @@ Page({
         }
       }
     }
-    async function tmp() {
+    async function getAllUserLocation() {
       let con = true
       let i = 0;
       let locations = []
@@ -158,7 +158,7 @@ Page({
             if (res.data.length < 20) {
               con = false
             }
-            fun1(locations, res.data)
+            itemMapDetail(locations, res.data)
             resolve()
           }).catch(err => {
             console.log("获得用户失败", err)
@@ -168,7 +168,7 @@ Page({
       console.log("获得全部用户位置", locations)
       t.marks(locations)
     }
-    tmp()
+    getAllUserLocation()
   },
   marks(locations) {
     this.setData({
